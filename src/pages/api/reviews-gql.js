@@ -5,21 +5,33 @@ const reviewsByProduct = {
     'aaa': [
         {
             score: 4,
-            description: 'great product!'
+            description: 'great product!',
+            product: {
+                id: 'aaa'
+            }
         },
         {
             score: 1,
-            description: 'worst thing ever'
+            description: 'worst thing ever',
+            product: {
+                id: 'aaa'
+            }
         }
     ],
     'bbb': [
         {
             score: 4,
-            description: 'love how B works!!1'
+            description: 'love how B works!!1',
+            product: {
+                id: 'bbb'
+            }
         },
         {
             score: 5,
-            description: 'would recommend'
+            description: 'would recommend',
+            product: {
+                id: 'bbb'
+            }
         }
     ]
 }
@@ -28,6 +40,7 @@ const typeDefs = gql`
     type Review {
         score: Int
         description: String
+        product: Product
     }
 
     extend type Product @key(fields: "id") {
